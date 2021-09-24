@@ -2,9 +2,14 @@ import "../bootstrap1.min.css";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-class pocketContainer extends Component {
+class PocketContainer extends Component {
   render() {
     console.log(this.props.pockets);
+    componentDidMount() {
+      console.log(this.props);
+      this.props.fetchPockets();
+    }
+
     return (
       <div className="App">
         <h1>Hello World</h1>
@@ -20,4 +25,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(pocketContainer);
+export default connect(mapStateToProps)(PocketContainer);

@@ -1,15 +1,14 @@
 import './App.css';
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import pocketContainer from './containers/pocketContainer';
+import PocketContainer from './containers/PocketContainer.js';
 
 class App extends Component {
   render() {
     console.log("Hello");
     return (
       <div className="App">
-        <h1>Hello World</h1>
-        <pocketContainer /> 
+        <PocketContainer /> 
       </div>
     )
   }
