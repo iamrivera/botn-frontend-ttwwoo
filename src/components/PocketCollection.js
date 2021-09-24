@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Pocket from "./Pocket.js";
+import PocketForm from "./PocketForm.js";
 
 class PocketCollection extends Component {
   renderPockets = () =>
@@ -12,6 +13,7 @@ class PocketCollection extends Component {
           <h5>Pocket Collection</h5>
         </div>
         <h6>{this.renderPockets()}</h6>
+        <PocketForm />
       </>
     );
   }
