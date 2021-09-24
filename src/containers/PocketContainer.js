@@ -14,12 +14,9 @@ class PocketContainer extends Component {
     console.log(this.props.pockets);
 
     return (
-      <>
-      <div className="App">
-        <h1>Hello World</h1>
-      </div>
+      <div>
       <PocketCollection pockets={this.props.pockets} />
-      </>
+      </div>
     );
   }
 }

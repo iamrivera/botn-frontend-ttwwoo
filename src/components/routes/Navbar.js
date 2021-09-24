@@ -22,6 +22,22 @@ export class Navbar extends Component {
         >
           Home
         </NavLink>
+        <NavLink
+          to="/about"
+          exact
+          style={link}
+          activeStyle={{ background: "darkblue" }}
+        >
+          About
+        </NavLink>
+        <NavLink
+          to="/my-pockets"
+          exact
+          style={link}
+          activeStyle={{ background: "darkblue" }}
+        >
+          My Pockets
+        </NavLink>
       </div>
     );
   }
