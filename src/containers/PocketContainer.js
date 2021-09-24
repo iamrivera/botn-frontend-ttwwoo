@@ -1,14 +1,16 @@
 import "../bootstrap1.min.css";
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { fetchPockets } from "../actions/pocketActions";
 
 class PocketContainer extends Component {
+  componentDidMount() {
+    console.log(this.props);
+    this.props.fetchPockets();
+  }
+
   render() {
     console.log(this.props.pockets);
-    componentDidMount() {
-      console.log(this.props);
-      this.props.fetchPockets();
-    }
 
     return (
       <div className="App">
@@ -25,4 +27,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(PocketContainer);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchPockets: () => dispatch(fetchPockets()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PocketContainer);

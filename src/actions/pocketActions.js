@@ -6,7 +6,7 @@ export const fetchPockets = () => {
         return response.json();
       })
       .then((responseJSON) => {
-        dispatch({ type: "ADD_POCKETS", pockets: response.JSON });
+        dispatch({ type: "ADD_POCKETS", pockets: responseJSON });
       });
   };
 };
