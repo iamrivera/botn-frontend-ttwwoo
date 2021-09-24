@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { createStore } from "redux";
+import { createPocket } from "../actions/pocketActions.js"
 
 class PocketForm extends Component {
   constructor() {
@@ -80,4 +82,17 @@ class PocketForm extends Component {
   }
 }
 
-export default PocketForm;
+const mapStateToProps = (state) => {
+    return {
+      pockets: state.pockets,
+      loading: state.loading,
+    };
+  };
+  
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      createPocket: (formData) => dispatch(createPocket(formData)),
+    };
+  };
+
+export default connect(mapStateToProps, mapDispatchToProps)(PocketForm);
