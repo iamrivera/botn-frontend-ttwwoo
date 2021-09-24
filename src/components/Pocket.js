@@ -1,5 +1,6 @@
 import React from "react";
 import "../bootstrap1.min.css";
+import { Link } from "react-router-dom";
 
 const Pocket = (props) => {
   return (
@@ -12,7 +13,7 @@ const Pocket = (props) => {
         <h4 className="card-title">My {props.item.name} Pocket</h4>
         <p className="card-text">{props.item.description}</p>
       </div>
-      <button type="button" className="btn btn-success">Open</button>
+      <button type="button" className="btn btn-success"><Link to={`/pocket/${props.item.id}`}>Open</Link></button>
       <button type="button" className="btn btn-warning">Edit</button>
     </div>
   );

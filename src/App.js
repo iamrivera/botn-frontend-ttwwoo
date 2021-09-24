@@ -13,7 +13,7 @@ class App extends Component {
         <Navbar />
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
-        <Route exact path="/my-pockets" component={PocketContainer}/>
+        <PocketContainer />
       </div>
     )
   }
