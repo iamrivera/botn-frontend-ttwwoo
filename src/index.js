@@ -10,10 +10,7 @@ import pocketsReducer from "./reducers/pocketsReducer.js";
 import "./index.css";
 import "./bootstrap1.min.css";
 
-const store = createStore(
-  pocketsReducer,
-  applyMiddleware(thunk),
-  );
+const store = createStore(pocketsReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
