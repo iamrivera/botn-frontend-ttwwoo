@@ -1,12 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import pocketContainer from './containers/pocketContainer';
 
-function App() {
-  return (
-    <div>
-
-    </div>
-  );
+class App extends Component {
+  render() {
+    console.log("Hello");
+    return (
+      <div className="App">
+        <h1>Hello World</h1>
+        <pocketContainer /> 
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
