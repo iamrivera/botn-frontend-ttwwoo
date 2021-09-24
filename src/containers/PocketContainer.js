@@ -5,6 +5,7 @@ import { fetchPockets } from "../actions/pocketActions";
 import PocketCollection from "../components/PocketCollection";
 import { Modal, Button } from "react-bootstrap";
 import PocketForm from "../components/PocketForm";
+import { Route } from "react-router-dom";
 
 class PocketContainer extends Component {
   state = {
@@ -18,15 +19,15 @@ class PocketContainer extends Component {
 
   handleClose = () => {
     this.setState({
-      show: false
-    })
-  }
+      show: false,
+    });
+  };
 
   handleShow = () => {
     this.setState({
-      show: true
-    })
-  }
+      show: true,
+    });
+  };
 
   render() {
     console.log(this.props.pockets);
@@ -39,8 +40,14 @@ class PocketContainer extends Component {
           <Modal.Header closeButton>
             <Modal.Title>Stitch a New Pocket</Modal.Title>
           </Modal.Header>
-          <Modal.Body><PocketForm handleClose={this.handleClose}/></Modal.Body>
+          <Modal.Body>
+            <PocketForm handleClose={this.handleClose} />
+          </Modal.Body>
         </Modal>
+        <Route
+          path="/pocket/:id"
+          render={() => <PocketPage collection={this.props.pockets} />}
+        />
       </div>
     );
   }

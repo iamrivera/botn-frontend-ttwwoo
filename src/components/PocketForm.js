@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { createStore } from "redux";
-import { createPocket } from "../actions/pocketActions.js"
+import { createPocket, fetchPockets } from "../actions/pocketActions.js";
 
 class PocketForm extends Component {
   constructor() {
@@ -13,17 +12,30 @@ class PocketForm extends Component {
     };
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.success !== prevProps.success) {
+      this.props.fetchPockets();
+    }
+  }
+
   handleChange = (event) => {
-      console.log(event.target)
+    console.log(event.target);
     this.setState({
-        [event.target.id]: event.target.value
+      [event.target.id]: event.target.value,
     });
   };
 
   handleSubmit = (event) => {
-      event.preventDefault();
-      this.props.handleClose();
-  }
+    event.preventDefault();
+    this.props.createPocket({
+      pocket: {
+        name: this.state.name,
+        description: this.state.description,
+        imglink: this.state.imglink,
+      },
+    });
+    this.props.handleClose();
+  };
 
   render() {
     return (
@@ -83,16 +95,18 @@ class PocketForm extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return {
-      pockets: state.pockets,
-      loading: state.loading,
-    };
+  return {
+    pockets: state.pockets,
+    loading: state.post_loading,
+    success: state.post_success,
   };
-  
-  const mapDispatchToProps = (dispatch) => {
-    return {
-      createPocket: (formData) => dispatch(createPocket(formData)),
-    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createPocket: (formData) => dispatch(createPocket(formData)),
+    fetchPockets: () => dispatch(fetchPockets()),
   };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(PocketForm);
