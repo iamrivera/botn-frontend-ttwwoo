@@ -5,15 +5,19 @@ class PocketForm extends Component {
   constructor() {
     super();
     this.state = {
-      pocket: "",
+      name: "",
+      description: "",
+      imglink: "",
     };
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
+      console.log(event.target)
     this.setState({
-      pocket: event.target.value,
+        [event.target.id]: event.target.value
     });
-  }
+  };
+
   render() {
     return (
       <div style={{ maxWidth: "20rem" }}>
@@ -21,15 +25,42 @@ class PocketForm extends Component {
           <fieldset>
             <legend>Stitch a New Pocket</legend>
             <div className="form-group">
-              <label htmlFor="pocketName" className="form-label mt-4">
+              <label htmlFor="name" className="form-label mt-4">
                 Pocket Name
               </label>
               <input
                 type="text"
                 className="form-control"
-                id="pocketName"
+                id="name"
                 placeholder="Enter Pocket's Name"
-                onChange={(event) => this.handleChange(event)}
+                value={this.state.name}
+                onChange={this.handleChange}
+              ></input>
+            </div>
+            <div className="form-group">
+              <label htmlFor="description" className="form-label mt-4">
+                Pocket Description
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="description"
+                placeholder="What are you putting in your pocket?"
+                value={this.state.description}
+                onChange={this.handleChange}
+              ></input>
+            </div>
+            <div className="form-group">
+              <label htmlFor="imglink" className="form-label mt-4">
+                Pocket Image
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="imglink"
+                placeholder="Add some flair to your pocket"
+                value={this.state.imglink}
+                onChange={this.handleChange}
               ></input>
             </div>
           </fieldset>
