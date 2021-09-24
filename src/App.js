@@ -1,6 +1,5 @@
 import './App.css';
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import PocketContainer from './containers/PocketContainer.js';
 
 class App extends Component {

@@ -2,7 +2,7 @@ import "../bootstrap1.min.css";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchPockets } from "../actions/pocketActions";
-import FolderCollection from "../components/FolderCollection";
+import PocketCollection from "../components/PocketCollection";
 
 class PocketContainer extends Component {
   componentDidMount() {
@@ -18,7 +18,7 @@ class PocketContainer extends Component {
       <div className="App">
         <h1>Hello World</h1>
       </div>
-      <FolderCollection />
+      <PocketCollection pockets={this.props.pockets} />
       </>
     );
   }
