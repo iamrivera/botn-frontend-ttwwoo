@@ -12,8 +12,8 @@ const Pocket = (props) => {
         <h4 className="card-title">My {props.item.name} Pocket</h4>
         <p className="card-text">{props.item.description}</p>
       </div>
-      <button type="button" class="btn btn-success">Open</button>
-      <button type="button" class="btn btn-warning">Edit</button>
+      <button type="button" className="btn btn-success">Open</button>
+      <button type="button" className="btn btn-warning">Edit</button>
     </div>
   );
 };
