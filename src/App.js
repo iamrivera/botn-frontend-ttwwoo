@@ -5,7 +5,6 @@ import PocketContainer from './containers/PocketContainer.js';
 
 class App extends Component {
   render() {
-    console.log("Hello");
     return (
       <div className="App">
         <PocketContainer /> 
