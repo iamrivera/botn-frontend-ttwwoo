@@ -4,16 +4,18 @@ import App from './App';
 
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import
+import pocketsReducer from "./reducers/pocketsReducer.js";
+
+const store = createStore(pocketsReducer); 
 
 import './index.css';
 import './bootstrap1.min.css';
 
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
