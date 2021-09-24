@@ -10,10 +10,9 @@ class PocketCollection extends Component {
     return (
       <>
         <div>
-          <h5>Pocket Collection</h5>
+          <p></p>
+          {this.renderPockets()}
         </div>
-        <h6>{this.renderPockets()}</h6>
-        <PocketForm />
       </>
     );
   }

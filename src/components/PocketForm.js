@@ -18,12 +18,16 @@ class PocketForm extends Component {
     });
   };
 
+  handleSubmit = (event) => {
+      event.preventDefault();
+      this.props.handleClose();
+  }
+
   render() {
     return (
       <div style={{ maxWidth: "20rem" }}>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <fieldset>
-            <legend>Stitch a New Pocket</legend>
             <div className="form-group">
               <label htmlFor="name" className="form-label mt-4">
                 Pocket Name
@@ -64,7 +68,7 @@ class PocketForm extends Component {
               ></input>
             </div>
           </fieldset>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary mt-3">
             Submit
           </button>
         </form>
