@@ -35,6 +35,11 @@ export class Navbar extends Component {
                 </NavLink>
               </li>
               <li className="nav-item">
+                <NavLink className="nav-link" to="/pockets/new">
+                  Stitch a New Pocket
+                </NavLink>
+              </li>
+              <li className="nav-item">
                 <NavLink className="nav-link" to="/pockets">
                   My Pockets
                 </NavLink>

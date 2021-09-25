@@ -5,6 +5,7 @@ import Navbar from './components/routes/Navbar';
 import About from './components/routes/About';
 import Home from './components/routes/Home';
 import PocketContainer from './containers/PocketContainer.js';
+import PocketForm from './components/PocketForm';
 
 class App extends Component {
   render() {

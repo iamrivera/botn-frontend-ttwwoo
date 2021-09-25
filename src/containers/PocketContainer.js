@@ -5,6 +5,7 @@ import { fetchPockets } from "../actions/pocketActions";
 import PocketCollection from "../components/PocketCollection";
 import { Route, Switch } from "react-router-dom";
 import PocketPage from "../components/routes/PocketPage";
+import PocketForm from "../components/PocketForm";
 
 class PocketContainer extends Component {
   componentDidMount() {
@@ -18,15 +19,19 @@ class PocketContainer extends Component {
     return (
       <div>
         <Switch>
+          <Route exact path="/pockets/new" component={PocketForm} />
           <Route
-            exact path="/pockets"
+            exact
+            path="/pockets"
             render={(routerProps) => (
               <PocketCollection {...routerProps} pockets={this.props.pockets} />
             )}
           />
           <Route
             path="/pockets/:id"
-            render={(routerProps) => <PocketPage {...routerProps} collection={this.props.pockets} />}
+            render={(routerProps) => (
+              <PocketPage {...routerProps} collection={this.props.pockets} />
+            )}
           />
         </Switch>
       </div>
