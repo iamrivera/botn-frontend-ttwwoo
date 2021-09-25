@@ -24,7 +24,7 @@ export const createPocket = (formData) => {
     .then((response) => {
       return response.json();
     })
-    .then((responseJSON) => {
+    .then(() => {
       dispatch({type: "POST_POCKET_SUCCESS"})
     })
   }

@@ -19,13 +19,13 @@ class PocketContainer extends Component {
       <div>
         <Switch>
           <Route
-            path="/my-pockets"
+            exact path="/pockets"
             render={(routerProps) => (
               <PocketCollection {...routerProps} pockets={this.props.pockets} />
             )}
           />
           <Route
-            path="/pocket/:id"
+            path="/pockets/:id"
             render={(routerProps) => <PocketPage {...routerProps} collection={this.props.pockets} />}
           />
         </Switch>
