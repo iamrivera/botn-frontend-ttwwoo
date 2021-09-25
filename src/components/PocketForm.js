@@ -86,9 +86,6 @@ class PocketForm extends Component {
             Submit
           </button>
         </form>
-        {/* {this.state.name}
-        {this.state.description}
-        {this.state.imglink} */}
       </div>
     );
   }

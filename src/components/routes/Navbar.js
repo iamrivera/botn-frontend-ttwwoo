@@ -35,12 +35,12 @@ export class Navbar extends Component {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/my-pockets">
+                <NavLink className="nav-link" to="/pockets">
                   My Pockets
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="my-napkins">
+                <NavLink className="nav-link" to="napkins">
                   My Napkins
                 </NavLink>
               </li>

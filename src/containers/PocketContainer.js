@@ -8,12 +8,12 @@ import PocketPage from "../components/routes/PocketPage";
 
 class PocketContainer extends Component {
   componentDidMount() {
-    console.log(this.props);
+    // console.log(this.props);
     this.props.fetchPockets();
   }
 
   render() {
-    console.log(this.props.pockets);
+    // console.log(this.props.pockets);
 
     return (
       <div>
