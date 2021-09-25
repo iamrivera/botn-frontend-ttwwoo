@@ -1,5 +1,5 @@
 import React from "react";
-import Napkin from "../Napkin"
+import NapkinCollection from "../NapkinCollection"
 
 const PocketPage = (props) => {
   let pocket = props.collection.filter(

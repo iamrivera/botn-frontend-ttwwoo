@@ -28,7 +28,6 @@ class PocketCollection extends Component {
       <>
         <div>
           <p></p>
-          {this.renderPockets()}
           <Button onClick={this.handleShow}>Create Pocket</Button>
           <Modal show={this.state.show} onHide={this.handleClose}>
             <Modal.Header closeButton>
@@ -38,6 +37,7 @@ class PocketCollection extends Component {
               <PocketForm handleClose={this.handleClose} />
             </Modal.Body>
           </Modal>
+          {this.renderPockets()}
         </div>
       </>
     );

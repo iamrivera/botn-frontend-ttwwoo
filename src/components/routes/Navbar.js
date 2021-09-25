@@ -40,7 +40,7 @@ export class Navbar extends Component {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="napkins">
+                <NavLink className="nav-link" to="/napkins">
                   My Napkins
                 </NavLink>
               </li>

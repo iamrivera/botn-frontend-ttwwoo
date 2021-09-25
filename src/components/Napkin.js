@@ -11,8 +11,9 @@ const Napkin = (props) => {
     >
       <div className="class-header"></div>
       <div className="card-body">
-        <h4 className="card-title">My {props.headline} Napkin</h4>
-        {/* <p className="card-text">{props.}</p> */}
+        <h4 className="card-title">My {props.item.headline} Napkin</h4>
+        <p className="card-text">{props.item.content}</p>
+        <p className="card-text">{props.item.sourcelink}</p>
       </div>
     </div>
   );
